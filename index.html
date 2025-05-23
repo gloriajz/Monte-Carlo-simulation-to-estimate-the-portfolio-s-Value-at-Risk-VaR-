@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monte Carlo Simulation for Portfolio VaR</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+      color: #333;
+    }
+    header {
+      background-color: #212121;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    main {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #444;
+    }
+    code {
+      background: #eee;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-size: 90%;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Monte Carlo Simulation to Estimate Portfolio Value-at-Risk</h1>
+    <p>By Gloria and team | STAT0011 Project</p>
+  </header>
+  <main>
+    <h2>📈 Overview</h2>
+    <p>
+      This project aims to assess the market risk of a portfolio comprising two major financial indices: the DAX and the CAC 40. Using weekly price data from 2000 to 2023, we estimate the portfolio’s 99% and 95% Value-at-Risk (VaR) through a Monte Carlo simulation based on copula theory.
+    </p>
+
+    <h2>🔬 Methodology</h2>
+    <p>
+      The analysis followed a structured modelling process:
+    </p>
+    <ul>
+      <li>Calculated log returns for both indices and analysed autocorrelation</li>
+      <li>Fitted AR + GARCH models to capture volatility clustering</li>
+      <li>Used information criteria (AIC/BIC) to choose optimal conditional distributions</li>
+      <li>Confirmed model adequacy with residual diagnostics and statistical tests</li>
+      <li>Applied copula modelling (BB1) to simulate joint dependencies between assets</li>
+      <li>Performed Monte Carlo simulations to estimate portfolio VaR</li>
+    </ul>
+
+    <h2>🧪 Tools & Libraries</h2>
+    <ul>
+      <li>R programming (GARCH, Copula, VineCopula packages)</li>
+      <li>Monte Carlo simulation (10,000 paths)</li>
+      <li>Kolmogorov-Smirnov & Anderson-Darling tests for model validation</li>
+    </ul>
+
+    <h2>📊 Results</h2>
+    <p>
+      The simulation estimated the portfolio's Value-at-Risk as follows:
+    </p>
+    <ul>
+      <li><strong>99% VaR:</strong> -0.00777</li>
+      <li><strong>95% VaR:</strong> -0.00475</li>
+    </ul>
+
+    <h2>📁 Files in This Repository</h2>
+    <ul>
+      <li><code>DAX.csv</code> — Historical price data of DAX 30 index</li>
+      <li><code>CAC_40.csv</code> — Historical price data of CAC 40 index</li>
+      <li><code>Final Version Project.R</code> — Full R code for simulation and analysis</li>
+    </ul>
+
+    <h2>💬 Conclusion</h2>
+    <p>
+      This project demonstrates a robust approach to estimating market risk using Monte Carlo simulation with realistic asset dependencies. The combination of time series modelling and copula-based simulation allows for more accurate VaR estimation under real-world conditions.
+    </p>
+  </main>
+</body>
+</html>
